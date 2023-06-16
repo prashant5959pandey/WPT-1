@@ -11,25 +11,25 @@ function App() {
 //by applying this method we reduce the contents of main function
 function ListDemo() {
   let string = "Hellow universe";
-  let list = ["delhi", "mumbai", "calcutta"];
-  // for(let i=0;i<10;i++){
-  //   list.push(string);
-  // }
-  console.log(list);
+ 
+  let list = ["", "", "" ,"",""];
+
+  let list1=[];
+
+  for(let i=0;i<100;i++){
+    list1.push("");
+  }
+   
+ 
 
   return (
     <>
       <h1>{string}</h1>
       {/* version 3 */}
-      {list.map((item) => (
-        <h1>hellow {item} </h1>
+      {list1.map((item) => (
+        <h1>hellow world </h1>
       ))}
-      <hr />
-      {/* version 2 */}
-      {list.map((item) => "hello" + item)}
-      <hr />
-      {/* version 1 */}
-      {list.map((item) => item)}
+     
     </>
   );
 }
