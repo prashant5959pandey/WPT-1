@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   return (
@@ -12,21 +12,25 @@ function App() {
 }
 
 function ListDemo() {
+  let inputRef = useRef();
   let [list, setList] = useState(["delhi"]);
 
   let AddItemAction = () => {
-    let inputRef = document.getElementById(`id1`);
-    let inputValue = inputRef.value;
+    //  console.log(document.querySelector("#id"));
+    // console.log(inputRef.current);
+    //above lines are only for understanding....(line 19 and 20 has same meaning)
+    let inputValue = inputRef.current.value;
 
     let newList = [...list, inputValue];
 
     setList(newList);
+
     inputRef.value = "";
   };
 
   return (
     <>
-      <input type="text" id="id1" placeholder="whatsapp...." />
+      <input type="text" ref={inputRef} placeholder="whatsapp...." />
       <input type="button" value="Add new Item" onClick={AddItemAction} />
 
       {list.map((item) => (
