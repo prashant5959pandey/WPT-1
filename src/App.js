@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Props Demo</h1>
+      <ListDemo username="Prashant" email="Prashnant@gmail.com" />
+      <ListDemo username="Parul" email="parul@gmail.com" />
+      <ListDemo username="Aditya " email="Aditya@gmail.com" />
+    </>
+  );
+}
+
+function ListDemo(props) {
+  // let data="Hellow universe";
+  // let list=["delhi", "calcutta", "chennai"];
+
+  return (
+    <>
+      <h1>Hello {props.username} {props.email}</h1>
+      <h1>{props.username}</h1>
+    </>
   );
 }
 
