@@ -10,15 +10,15 @@ function App() {
     </>
   );
 }
-
-function ListDemo(props) {
+    //by using destructring
+  function ListDemo({email, username}) { // ====>>>> this destructring is recommended
   // let data="Hellow universe";
   // let list=["delhi", "calcutta", "chennai"];
 
   return (
     <>
-      <h1>Hello {props.username} {props.email}</h1>
-      <h1>{props.username}</h1>
+      <h1>Hello {username} {email}</h1>
+      <h1>{username}</h1>
     </>
   );
 }
