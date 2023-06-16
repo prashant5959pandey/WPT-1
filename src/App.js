@@ -34,13 +34,13 @@ function ListDemo() {
       <input type="button" value="Add new Item" onClick={AddItemAction} />
 
       {list.map((item) => (
-        <MessageDemo message={item}/>
+        <MessageDemo message={item} />
       ))}
     </>
   );
 }
 
-function MessageDemo({message}) {
+function MessageDemo({ message }) {
   return (
     <>
       <h1> {message} </h1>
@@ -53,8 +53,8 @@ function MessageDemo({message}) {
         porro, facilis assumenda.
       </p>
       <div>
-      <input type="button" value="&#128077;" />
-      <input type="button" value="&#128078;" />
+        <input type="button" value="&#128077;" />
+        <input type="button" value="&#128078;" />
       </div>
     </>
   );
