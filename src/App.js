@@ -4,14 +4,14 @@ function App() {
   return (
     <>
       <h1>Props Demo</h1>
-      <ListDemo/>
+      <ListDemo />
     </>
   );
 }
 //by applying this method we reduce the contents of main function
 function ListDemo() {
-  let string ="Hellow universe";
-  let list=["delhi","mumbai", "calcutta"];
+  let string = "Hellow universe";
+  let list = ["delhi", "mumbai", "calcutta"];
   // for(let i=0;i<10;i++){
   //   list.push(string);
   // }
@@ -19,12 +19,17 @@ function ListDemo() {
 
   return (
     <>
-     <h1>{string}</h1>
-     {/* for each is the consumer function ..so it doesn't return */}
-     {/**  {list.forEach((item)=>item)}; */}
-     
-     {/* map function  takes input and return output*/}
-     {list.map((item)=>item)};
+      <h1>{string}</h1>
+      {/* version 3 */}
+      {list.map((item) => (
+        <h1>hellow {item} </h1>
+      ))}
+      <hr />
+      {/* version 2 */}
+      {list.map((item) => "hello" + item)}
+      <hr />
+      {/* version 1 */}
+      {list.map((item) => item)}
     </>
   );
 }
