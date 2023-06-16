@@ -34,20 +34,28 @@ function ListDemo() {
       <input type="button" value="Add new Item" onClick={AddItemAction} />
 
       {list.map((item) => (
-        <div>
-          <h1>{item} </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-            similique, expedita itaque harum nobis ratione ab, accusantium
-            numquam error fuga hic reiciendis, esse dolorem? Quod eos modi
-            dolorem, consectetur delectus quibusdam corrupti reiciendis enim
-            fugiat minima hic nisi! Quae voluptatum quibusdam excepturi quasi
-            quisquam dolorem veritatis esse porro, facilis assumenda.
-          </p>
-          <input type="button" value="&#128077;" />
-          <input type="button" value="&#128078;" />
-        </div>
+        <MessageDemo message={item}/>
       ))}
+    </>
+  );
+}
+
+function MessageDemo({message}) {
+  return (
+    <>
+      <h1> {message} </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi similique,
+        expedita itaque harum nobis ratione ab, accusantium numquam error fuga
+        hic reiciendis, esse dolorem? Quod eos modi dolorem, consectetur
+        delectus quibusdam corrupti reiciendis enim fugiat minima hic nisi! Quae
+        voluptatum quibusdam excepturi quasi quisquam dolorem veritatis esse
+        porro, facilis assumenda.
+      </p>
+      <div>
+      <input type="button" value="&#128077;" />
+      <input type="button" value="&#128078;" />
+      </div>
     </>
   );
 }
