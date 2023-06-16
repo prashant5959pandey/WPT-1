@@ -10,25 +10,27 @@ function App() {
     </>
   );
 }
-//by applying this method we reduce the contents of main function
+
 function ListDemo() {
-  // stateful variable
   let [list, setList] = useState(["delhi"]);
 
   let AddItemAction = () => {
-    let newList = [...list, "mumbai"];
+    let inputRef = document.getElementById(`id1`);
+    let inputValue = inputRef.value;
 
-    //for trigger the dom operation for updation
+    let newList = [...list, inputValue];
+
     setList(newList);
+    inputRef.value = "";
   };
 
   return (
     <>
-      {/** event binding */}
+      <input type="text" id="id1" placeholder="whatsapp...." />
       <input type="button" value="Add new Item" onClick={AddItemAction} />
-      {/**List */}
+
       {list.map((item) => (
-        <h1>hellow world </h1>
+        <h1>{item} </h1>
       ))}
     </>
   );
