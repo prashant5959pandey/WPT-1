@@ -1,5 +1,7 @@
 /** @format */
 
+import { useState } from "react";
+
 function App() {
   return (
     <>
@@ -10,42 +12,26 @@ function App() {
 }
 //by applying this method we reduce the contents of main function
 function ListDemo() {
-  let string = "Hellow universe";
- 
-  let list = ["", "", "" ,"",""];
+  // stateful variable
+  let [list, setList] = useState(["delhi"]);
 
-  let list1=[];
+  let AddItemAction = () => {
+    let newList = [...list, "mumbai"];
 
-  for(let i=0;i<100;i++){
-    list1.push("");
-  }
-   
- 
+    //for trigger the dom operation for updation
+    setList(newList);
+  };
 
   return (
     <>
-      <h1>{string}</h1>
-      {/* version 3 */}
-      {list1.map((item) => (
+      {/** event binding */}
+      <input type="button" value="Add new Item" onClick={AddItemAction} />
+      {/**List */}
+      {list.map((item) => (
         <h1>hellow world </h1>
       ))}
-     
     </>
   );
 }
-
-//by using destructring
-// function Display({ email, username }) {
-//   // ====>>>> this destructring is recommended
-
-//   return (
-//     <>
-//       <h1>
-//         Hello {username} {email}
-//       </h1>
-//       <h1>{username}</h1>
-//     </>
-//   );
-// }
 
 export default App;
